@@ -12,13 +12,14 @@ CREATE TABLE works (
   notes TEXT
 );
 
-CREATE TABLE works_type (
+CREATE TABLE work_types (
   id SERIAL4 PRIMARY KEY,
   name VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE users (
   id SERIAL4 PRIMARY KEY,
+  name VARCHAR(100)
   email VARCHAR(300),
   password_digest VARCHAR(400)
 );
