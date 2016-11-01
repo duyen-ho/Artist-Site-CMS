@@ -45,5 +45,13 @@ delete '/session' do
 end
 
 get '/dashboard' do
+  @work_types = WorkType.all
+  @works = Work.all
   erb :dashboard
+end
+
+get '/dashboard/works/:id/edit' do
+  @work = Work.find(params[:id])
+  @work_types = WorkType.all
+  erb :works_edit
 end
