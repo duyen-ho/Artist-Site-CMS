@@ -17,8 +17,24 @@
 
   <form action="/session" method="post">
     <input type="hidden" name="_method" value="delete">
-    <button>logout</button>
+    <button>Log Out</button>
   </form>
+
+  <nav>
+    <h2>Edit</h2>
+    <ul>
+      <li class="menu-main"><a href=" #">Works</a></li>
+
+        <ul class="menu-sub">
+          <% @work_types.each do |category| %>
+          <li><a href=""><%= category.name %></a></li>
+          <% end %>
+        </ul>
+
+      <li class="menu-main"><a href="#">Biography</a></li>
+      <li class="menu-main"><a href="#">Contact</a></li>
+    </ul>
+  </nav>
 
   <% end %>
 
