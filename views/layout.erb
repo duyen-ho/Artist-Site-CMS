@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Mia Cera Salsjo Artist</title>
+  <meta name="description" content="Mia Salsjo Contemporary Australian Artist Installation Art Silkscreen Drawing Video Art">
+  <link rel='stylesheet' href='/stylesheets/main.css'>
+</head>
+
+<body>
+
+  <h1>Mia Salsjo</h1>
+
+  <% if logged_in? %>
+
+  <p>Welcome <%= User.find(session[:user_id]).name %></p>
+
+  <form action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button>logout</button>
+  </form>
+
+  <% end %>
+
+  <%= yield %>
+
+</body>
+</html>
