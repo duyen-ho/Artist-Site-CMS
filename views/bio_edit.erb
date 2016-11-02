@@ -1,0 +1,11 @@
+<form action="/admin/dashboard/biography/edit" method="post">
+
+  <h4>Curriculum Vitae</h4>
+  <div class="myeditablediv">
+    <textarea name="intro" rows="8" cols="40"><%= @bio.intro %></textarea>
+  </div>
+
+  <button>Save Changes</button>
+</form>
+
+<%= @status %>

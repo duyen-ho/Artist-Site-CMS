@@ -5,6 +5,8 @@ require_relative 'db_config'
 require_relative 'models/work'
 require_relative 'models/work_type'
 require_relative 'models/user'
+require_relative 'models/biography'
+require_relative 'models/contact'
 
 enable :sessions
 
@@ -88,4 +90,22 @@ delete '/admin/dashboard/:id/delete' do
   work = Work.find(params[:id])
   work.delete
   redirect to '/admin/dashboard'
+end
+
+get '/admin/dashboard/biography/edit' do
+
+  @bio = Biography.last
+    # binding.pry
+  @work_types = WorkType.all
+  erb :bio_edit
+end
+
+post '/admin/dashboard/biography/edit' do
+  @work_types = WorkType.all
+  bio = Biography.last
+  # save changes
+  bio.intro = params[:intro]
+  bio.save
+
+  erb :bio_edit
 end
