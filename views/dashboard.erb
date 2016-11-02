@@ -11,12 +11,14 @@
       <h5><%= work.medium %></h5>
       <h5><%= work.dimensions %></h5>
       <p><%= work.notes %></p>
-      <a href="/dashboard/works/<%= work.id %>/edit">Edit</a>
+      <a href="/admin/dashboard/works/<%= work.id %>/edit">Edit</a>
     </figcaption>
 
     <div class="clearfix">
     </div>
 
-  <% end %>
+    <form action="/admin/dashboard/<%= work.id %>/delete" method="post">
+      <button>delete</button>
+    </form>
 
-</div>
+  <% end %>

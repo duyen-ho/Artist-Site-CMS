@@ -1,0 +1,11 @@
+<p>Are you sure you want to delete <%= @work.title %></p>
+
+<img src="<%= @work.image_url %>" alt="" />
+
+<form action="/admin/dashboard/<%= @work.id %>/delete" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>YES</button>
+</form>
+
+<a href="/admin/dashboard">NO</a>
+<p>Return to Dashboard</p>

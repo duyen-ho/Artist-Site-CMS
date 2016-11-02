@@ -1,7 +1,6 @@
 <img class="works-edit" src="<%= @work.image_url %>" alt="">
 
-<form class="form-edit" action="/dashboard/works/<%= @work.id %>" method="post">
-  <input type="hidden" name="_method" value="patch">
+<form class="form-edit" action="/admin/dashboard/works/<%= @work.id %>/edit" method="post">
 
   <label for="work_title">Title</label>
   <textarea name="title" cols="50" rows="2"><%= @work.title %></textarea>
