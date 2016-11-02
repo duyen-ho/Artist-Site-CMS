@@ -27,15 +27,13 @@ end
 
 post '/login' do
   user = User.find_by(email: params[:email])
-
+  # binding.pry
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
     redirect to '/admin/dashboard'
   else
-    if !user
-      @message = 'Please enter a valid username and password'
-      erb :session_new
-    end
+    @message = 'Please enter a valid username and password'
+    erb :session_new
   end
 
 end
@@ -46,7 +44,6 @@ delete '/session' do
 end
 
 get '/admin/dashboard' do
-  # binding.pry
   @work_types = WorkType.all
   @works = Work.all
   erb :dashboard
@@ -83,7 +80,7 @@ end
 post '/admin/dashboard/:id/delete' do
   @work = Work.find(params[:id])
   @work_types = WorkType.all
-  # validate - are you sure?
+  # are you sure?
   erb :delete
 end
 
