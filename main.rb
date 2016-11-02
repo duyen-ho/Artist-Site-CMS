@@ -29,7 +29,6 @@ end
 
 post '/login' do
   user = User.find_by(email: params[:email])
-  # binding.pry
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id
     redirect to '/admin/dashboard'
@@ -93,19 +92,22 @@ delete '/admin/dashboard/:id/delete' do
 end
 
 get '/admin/dashboard/biography/edit' do
-
   @bio = Biography.last
-    # binding.pry
   @work_types = WorkType.all
   erb :bio_edit
 end
 
 post '/admin/dashboard/biography/edit' do
   @work_types = WorkType.all
-  bio = Biography.last
-  # save changes
-  bio.intro = params[:intro]
-  bio.save
+  @bio = Biography.last
+  @bio.body = params[:body]
+  @bio.save
+
+  if @bio.save
+    @status = 'Changes saved'
+  else
+    @status = ''
+  end
 
   erb :bio_edit
 end
