@@ -8,7 +8,13 @@
   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script type="text/javascript">
     tinymce.init({
-    selector: 'textarea'
+    selector: '.rtf_edit',
+    skin: 'lightgray',
+    plugins: 'link',
+    menubar: false,
+    toolbar: 'undo redo | bold italic underline | link',
+    width: 600,
+    height : 500,
   });
   </script>
 </head>
@@ -29,13 +35,13 @@
   <nav>
     <h2>Edit</h2>
     <ul>
-      <li class="menu-main"><a href="#">Works</a></li>
-      <li class="menu-main"><a href="#">Biography</a></li>
-      <li class="menu-main"><a href="#">Contact</a></li>
+      <li class="menu-main"><a href="/admin/dashboard">Works</a></li>
+      <li class="menu-main"><a href="/admin/dashboard/biography/edit">Biography</a></li>
+      <li class="menu-main"><a href="/admin/dashboard/contact/edit">Contact</a></li>
     </ul>
     <ul class="menu-sub">
       <% @work_types.each do |category| %>
-      <li><a href=""><%= category.name %></a></li>
+      <li><a href="/admin/dashboard/works/<%= category.name.downcase %>"><%= category.name %></a></li>
       <% end %>
     </ul>
   </nav>
