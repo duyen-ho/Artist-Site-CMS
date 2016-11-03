@@ -63,20 +63,19 @@ get '/admin/dashboard/works/new' do
 end
 
 post '/admin/dashboard/works/new' do
-  work = Work.new
+  @work = Work.new
   @work_types = WorkType.all
 
-  # save work
-  work.title = params[:title]
-  work.work_type_id = params[:work_type_id]
-  work.medium = params[:medium]
-  work.dimensions = params[:dimensions]
-  work.image_url = params[:image_url]
-  work.video_url = params[:video_url]
-  work.display_homepage = params[:display_homepage]
-  work.notes = params[:notes]
+  @work.title = params[:title]
+  @work.work_type_id = params[:work_type_id]
+  @work.medium = params[:medium]
+  @work.dimensions = params[:dimensions]
+  @work.image_url = params[:image_url]
+  @work.video_url = params[:video_url]
+  @work.display_homepage = params[:display_homepage]
+  @work.notes = params[:notes]
 
-  if work.save
+  if @work.save
     redirect to '/admin/dashboard'
   else
     @status = 'There was an error saving. Please check your entry.'
@@ -94,7 +93,7 @@ end
 post '/admin/dashboard/works/:id/edit' do
   @work = Work.find(params[:id])
   @work_types = WorkType.all
-  # save changes
+
   @work.title = params[:title]
   @work.work_type_id = params[:work_type_id]
   @work.medium = params[:medium]
@@ -134,11 +133,11 @@ end
 
 post '/admin/dashboard/biography/edit' do
   @work_types = WorkType.all
-  @bio = Biography.last
-  @bio.body = params[:body]
-  @bio.save
+  bio = Biography.last
+  bio.body = params[:body]
+  bio.save
 
-  if @bio.save
+  if bio.save
     @status = 'Changes saved'
   else
     @status = ''
@@ -157,6 +156,14 @@ get '/admin/dashboard/works' do
   work_type = @work_types.find_by(name: @title).id
   @works = Work.where(work_type_id: work_type)
   erb :works_submenu
+end
+
+get '/search' do
+  @work_types = WorkType.all
+  search_word = params[:search].downcase
+  @works = Work.where('lower(title) LIKE ? OR lower(medium) LIKE ? OR lower(dimensions) LIKE ? OR lower(notes) LIKE ?', "%#{search_word}%", "%#{search_word}%", "%#{search_word}%", "%#{search_word}%").all
+  # binding.pry
+  erb :search_results
 end
 
 # Visitor routes
