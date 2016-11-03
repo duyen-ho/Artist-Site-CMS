@@ -1,0 +1,46 @@
+<h2>Add New Work</h2>
+
+<form class="form-edit" action="/admin/dashboard/works/<%= @work.id %>/new" method="post">
+
+  <label for="work_title">Title</label>
+  <textarea name="title" cols="50" rows="2"><%= @work.title %></textarea>
+
+  <label for="work_category">Category</label>
+  <select name="work_type_id">
+    <% @work_types.each do |work_type| %>
+
+    <% if @work.work_type_id == work_type.id %>
+    <option selected value="<%= work_type.id %>"><%= work_type.name %></option>
+    <% else %>
+    <option value="<%= work_type.id %>"><%= work_type.name %></option>
+    <% end %>
+
+    <% end %>
+  </select>
+
+  <label for="work_medium">Medium</label>
+  <textarea name="medium" cols="50" rows="2"><%= @work.medium %></textarea>
+
+  <label for="work_dimensions">Dimensions</label>
+  <input name="dimensions" type="text" value="<%= @work.dimensions %>" size="20">
+
+  <label for="work_image_url">Image URL</label>
+  <textarea name="image_url" cols="50" rows="3"><%= @work.image_url %></textarea>
+
+  <label for="work_video_url">Video URL</label>
+  <textarea name="video_url" cols="50" rows="3"><%= @work.video_url %></textarea>
+
+  <label for="work_display_option">Display as Selected Works</label>
+  <select name="display_homepage">
+    <option selected value="<%= @work.display_homepage %>"><%= @work.display_homepage %></option>
+    <option value="<%= !@work.display_homepage %>"><%= !@work.display_homepage %></option>
+  </select>
+
+  <label for="work_notes">Notes</label>
+  <textarea name="notes" cols="50" rows="10"><%= @work.notes %></textarea>
+
+  <button>Add</button>
+
+</form>
+
+<p> <%= @status %></p>

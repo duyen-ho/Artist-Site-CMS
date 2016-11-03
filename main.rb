@@ -25,6 +25,11 @@ end
 get '/login' do
   @work_types = WorkType.all
   erb :session_new
+
+  if logged_in?
+    redirect to '/admin/dashboard'
+  end
+
 end
 
 post '/login' do
@@ -47,7 +52,39 @@ end
 get '/admin/dashboard' do
   @work_types = WorkType.all
   @works = Work.all
+  # binding.pry
+  # Work.
+  # @works = @works.desc
   erb :dashboard
+end
+
+get '/admin/dashboard/works/new' do
+  @work = Work.new
+  @work_types = WorkType.all
+  erb :works_new
+end
+
+post '/admin/dashboard/works/new' do
+  work = Work.new
+  @work_types = WorkType.all
+
+  # save work
+  work.title = params[:title]
+  work.work_type_id = params[:work_type_id]
+  work.medium = params[:medium]
+  work.dimensions = params[:dimensions]
+  work.image_url = params[:image_url]
+  work.video_url = params[:video_url]
+  work.display_homepage = params[:display_homepage]
+  work.notes = params[:notes]
+
+  if work.save
+    redirect to '/admin/dashboard'
+  else
+    @status = 'There was an error saving. Please check your entry.'
+  end
+
+  erb :works_new
 end
 
 get '/admin/dashboard/works/:id/edit' do
@@ -110,4 +147,30 @@ post '/admin/dashboard/biography/edit' do
   end
 
   erb :bio_edit
+end
+
+get '/admin/dashboard/contact/edit' do
+  "Hello World"
+end
+
+get '/admin/dashboard/works/:work_type_id.name.downcase' do
+  # to filter categories
+  # Work.where('work_type_id = ?', params[:work_type_id])
+  # Work.where(work_type_id: (1))
+  
+  # to print name of category
+  # [17] pry(main)> @work = WorkType.find(@work.work_type_id).name
+  # => "Drawings"
+end
+
+get '/' do
+  erb :index
+end
+
+get '/works' do
+
+end
+
+get '/works/:work_type_id.name.downcase' do
+
 end
