@@ -1,0 +1,26 @@
+<div class="works-wrapper">
+
+  <h4><%= @title %></h4>
+
+  <% @works.each do |work| %>
+
+    <figure>
+      <img class="works" src="<%= work.image_url %>" alt="">
+    </figure>
+
+    <figcaption class="works-info">
+      <h5><%= work.title %></h5>
+      <h5><%= work.medium %></h5>
+      <h5><%= work.dimensions %></h5>
+      <p><%= work.notes %></p>
+      <a href="/admin/dashboard/works/<%= work.id %>/edit">Edit</a>
+    </figcaption>
+
+    <div class="clearfix">
+    </div>
+
+    <form action="/admin/dashboard/<%= work.id %>/delete" method="post">
+      <button>delete</button>
+    </form>
+
+  <% end %>

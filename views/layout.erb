@@ -5,29 +5,23 @@
   <title>Mia Cera Salsjo Artist</title>
   <meta name="description" content="Mia Salsjo Contemporary Australian Artist Installation Art Silkscreen Drawing Video Art">
   <link rel='stylesheet' href='/stylesheets/main.css'>
-  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
-  <script type="text/javascript">
-    tinymce.init({
-    selector: '.rtf_edit',
-    skin: 'lightgray',
-    plugins: 'link',
-    menubar: false,
-    toolbar: 'undo redo | bold italic underline | link',
-    width: 600,
-    height : 500,
-  });
-  </script>
+
 </head>
 
 <body>
+
+  <form class="search-bar" action="/search" method="get">
+    <input name="search" type="text" value="" size="60">
+    <button id="search-btn">Search</button>
+  </form>
 
   <h1>Mia Salsjo</h1>
 
   <% if logged_in? %>
 
-  <p>Welcome <%= User.find(session[:user_id]).name %></p>
+  <p>Welcome <%= current_user.name %></p>
 
-  <form action="/session" method="post">
+  <form action="/login" method="post">
     <input type="hidden" name="_method" value="delete">
     <button>Log Out</button>
   </form>
@@ -51,5 +45,17 @@
 
   <%= yield %>
 
+  <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
+  <script>
+    tinymce.init({
+    selector: '.rtf_edit',
+    skin: 'lightgray',
+    plugins: 'link',
+    menubar: false,
+    toolbar: 'undo redo | bold italic underline | link',
+    width: 600,
+    height : 500,
+  });
+  </script>
 </body>
 </html>
