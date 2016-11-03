@@ -5,45 +5,25 @@
   <title>Mia Cera Salsjo Artist</title>
   <meta name="description" content="Mia Salsjo Contemporary Australian Artist Installation Art Silkscreen Drawing Video Art">
   <link rel='stylesheet' href='/stylesheets/main.css'>
-
 </head>
 
 <body>
 
-  <form class="search-bar" action="/search" method="get">
-    <input name="search" type="text" value="" size="60">
-    <button id="search-btn">Search</button>
-  </form>
+  <header>
+    <%= erb(:_header) %>
+  </header>
 
-  <h1>Mia Salsjo</h1>
+  <aside class="">
+    <%= erb(:_sidebar) %>
+  </aside>
 
-  <% if logged_in? %>
+  <main>
+    <%= yield %>
+  </main>
 
-  <p>Welcome <%= current_user.name %></p>
-
-  <form action="/login" method="post">
-    <input type="hidden" name="_method" value="delete">
-    <button>Log Out</button>
-  </form>
-
-  <nav>
-    <h2>Edit</h2>
-    <ul>
-      <li class="menu-main"><a href="/admin/dashboard">Works</a></li>
-      <li class="menu-main"><a href="/admin/dashboard/biography/edit">Biography</a></li>
-      <li class="menu-main"><a href="/admin/dashboard/contact/edit">Contact</a></li>
-    </ul>
-    <ul class="menu-sub">
-      <% @work_types.each do |category| %>
-      <li><a href="/admin/dashboard/works?category=<%= category.name %>"><%= category.name %></a></li>
-      <% end %>
-    </ul>
-    <a href="/admin/dashboard/works/new">Add New Work</a>
-  </nav>
-
-  <% end %>
-
-  <%= yield %>
+  <footer>
+    <%= erb(:_footer) %>
+  </footer>
 
   <script src="//cdn.tinymce.com/4/tinymce.min.js"></script>
   <script>
