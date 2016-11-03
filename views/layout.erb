@@ -41,7 +41,7 @@
     </ul>
     <ul class="menu-sub">
       <% @work_types.each do |category| %>
-      <li><a href="/admin/dashboard/works/<%= category.name.downcase %>"><%= category.name %></a></li>
+      <li><a href="/admin/dashboard/works?category=<%= category.name %>"><%= category.name %></a></li>
       <% end %>
     </ul>
     <a href="/admin/dashboard/works/new">Add New Work</a>

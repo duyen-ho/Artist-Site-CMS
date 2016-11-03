@@ -52,8 +52,6 @@ end
 get '/admin/dashboard' do
   @work_types = WorkType.all
   @works = Work.all
-  # binding.pry
-  # Work.
   # @works = @works.desc
   erb :dashboard
 end
@@ -153,24 +151,20 @@ get '/admin/dashboard/contact/edit' do
   "Hello World"
 end
 
-get '/admin/dashboard/works/:work_type_id.name.downcase' do
-  # to filter categories
-  # Work.where('work_type_id = ?', params[:work_type_id])
-  # Work.where(work_type_id: (1))
-  
-  # to print name of category
-  # [17] pry(main)> @work = WorkType.find(@work.work_type_id).name
-  # => "Drawings"
+get '/admin/dashboard/works' do
+  @work_types = WorkType.all
+  @title = params[:category]
+  work_type = @work_types.find_by(name: @title).id
+  @works = Work.where(work_type_id: work_type)
+  erb :works_submenu
 end
 
+# Visitor routes
 get '/' do
   erb :index
 end
 
 get '/works' do
 
-end
-
-get '/works/:work_type_id.name.downcase' do
-
+  erb :works
 end
