@@ -1,7 +1,8 @@
+<h2>Biography</h2>
+
 <form action="/admin/dashboard/biography/edit" method="post">
-  <h4>Curriculum Vitae</h4>
   <textarea class="rtf_edit" name="body"><%= @bio.body %></textarea>
   <button>Update</button>
 </form>
 
-<span><%= @status %></span>
+<span class="status-msg"><%= @status %></span>

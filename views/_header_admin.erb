@@ -1,0 +1,14 @@
+<% if logged_in? %>
+
+<h1><a href="/admin/dashboard">Mia Salsjo</a></h1>
+
+<p>Welcome <%= current_user.name %></p>
+
+<form action="/login" method="post">
+  <input type="hidden" name="_method" value="delete">
+  <button>Log Out</button>
+</form>
+
+<%= erb(:_search) %>
+
+<% end %>

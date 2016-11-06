@@ -10,11 +10,22 @@
 <body>
 
   <header>
+    <% if request.path.start_with?('/admin') %>
+    <%= erb(:_header_admin) %>
+    <% else %>
     <%= erb(:_header) %>
+    <% end %>
   </header>
 
-  <aside class="">
+  <aside>
+    <% if request.path.start_with?('/admin') %>
+    <%= erb(:_sidebar_admin) %>
+    <% elsif request.path_info == '/' ||
+    request.path_info == '/works' ||
+    request.path_info == '/biography' ||
+    request.path_info == '/contact' %>
     <%= erb(:_sidebar) %>
+    <% end %>
   </aside>
 
   <main>

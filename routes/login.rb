@@ -2,7 +2,6 @@ require_relative '../models/user'
 
 
 get '/login' do
-  @work_types = WorkType.all
   if User.find_by(id: session[:user_id])
     redirect to '/admin/dashboard'
   end
@@ -11,7 +10,6 @@ get '/login' do
 end
 
 post '/login' do
-  @work_types = WorkType.all
   user = User.find_by(username: params[:username])
   if user && user.authenticate(params[:password])
     session[:user_id] = user.id

@@ -1,11 +1,15 @@
+<% if !params[:category] %>
 <h2>All Works</h2>
+<% else %>
+<h3><%= @title %></h3>
+<% end %>
 
 <section class="works-wrapper">
 
   <% @works.each do |work| %>
 
     <figure>
-      <img class="works" src="<%= work.image_url %>" alt="">
+      <a href="#"><img class="works" src="<%= work.image_url %>" alt=""></a>
     </figure>
 
     <figcaption class="works-info">
@@ -13,15 +17,10 @@
       <h5><%= work.medium %></h5>
       <h5><%= work.dimensions %></h5>
       <p><%= work.notes %></p>
-      <a href="/admin/dashboard/works/<%= work.id %>/edit">Edit</a>
     </figcaption>
 
     <div class="clearfix">
     </div>
-
-    <form action="/admin/dashboard/<%= work.id %>/delete" method="post">
-      <button>delete</button>
-    </form>
 
   <% end %>
 

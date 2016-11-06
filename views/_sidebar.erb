@@ -1,18 +1,12 @@
-<% if logged_in? %>
-
 <nav>
-  <h2>Edit</h2>
   <ul>
-    <li class="menu-main"><a href="/admin/dashboard">Works</a></li>
-    <li class="menu-main"><a href="/admin/dashboard/biography/edit">Biography</a></li>
-    <li class="menu-main"><a href="/admin/dashboard/contact/edit">Contact</a></li>
+    <li class="menu-main"><a href="/works">Works</a></li>
+    <li class="menu-main"><a href="/biography">Biography</a></li>
+    <li class="menu-main"><a href="/contact">Contact</a></li>
   </ul>
   <ul class="menu-sub">
     <% @work_types.each do |category| %>
-    <li><a href="/admin/dashboard/works?category=<%= category.name %>"><%= category.name %></a></li>
+    <li><a href="/works?category=<%= category.name %>"><%= category.name %></a></li>
     <% end %>
   </ul>
-  <a href="/admin/dashboard/works/new">Add New Work</a>
 </nav>
-
-<% end %>

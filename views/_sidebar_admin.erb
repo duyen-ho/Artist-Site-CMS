@@ -1,0 +1,14 @@
+<nav>
+  <ul>
+    <li class="menu-main"><a href="/admin/dashboard">Works</a></li>
+    <li class="menu-main"><a href="/admin/dashboard/biography/edit">Biography</a></li>
+    <li class="menu-main"><a href="/admin/dashboard/contact/edit">Contact</a></li>
+    <li class="menu-main"><a href="/" target="_blank">Go to Site</a></li>
+  </ul>
+  <ul class="menu-sub">
+    <% @work_types.each do |category| %>
+    <li><a href="/admin/dashboard/works?category=<%= category.name %>"><%= category.name %></a></li>
+    <% end %>
+  </ul>
+  <a href="/admin/dashboard/works/new">Add New Work</a>
+</nav>

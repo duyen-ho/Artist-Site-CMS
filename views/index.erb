@@ -1,4 +1,4 @@
-<h2>All Works</h2>
+<h2>Selected Works</h2>
 
 <section class="works-wrapper">
 
@@ -13,15 +13,10 @@
       <h5><%= work.medium %></h5>
       <h5><%= work.dimensions %></h5>
       <p><%= work.notes %></p>
-      <a href="/admin/dashboard/works/<%= work.id %>/edit">Edit</a>
     </figcaption>
 
     <div class="clearfix">
     </div>
-
-    <form action="/admin/dashboard/<%= work.id %>/delete" method="post">
-      <button>delete</button>
-    </form>
 
   <% end %>
 
