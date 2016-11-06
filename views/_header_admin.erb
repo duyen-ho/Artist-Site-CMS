@@ -2,13 +2,12 @@
 
 <h1><a href="/admin/dashboard">Mia Salsjo</a></h1>
 
-<p>Welcome <%= current_user.name %></p>
-
-<form action="/login" method="post">
-  <input type="hidden" name="_method" value="delete">
-  <button>Log Out</button>
-</form>
-
-<%= erb(:_search) %>
+<div class="login">
+  <p>Welcome <%= current_user.name %>!</p>
+  <form action="/login" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="logout-btn">Log Out</button>
+  </form>
+</div>
 
 <% end %>

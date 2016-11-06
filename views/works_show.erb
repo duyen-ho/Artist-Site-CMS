@@ -8,16 +8,17 @@
 
   <% @works.each do |work| %>
 
-    <figure>
-      <a href="#"><img class="works" src="<%= work.image_url %>" alt=""></a>
-    </figure>
-
-    <figcaption class="works-info">
-      <h5><%= work.title %></h5>
-      <h5><%= work.medium %></h5>
-      <h5><%= work.dimensions %></h5>
-      <p><%= work.notes %></p>
-    </figcaption>
+    <div class="works-individual">
+      <figure>
+        <a href="#"><img class="works" src="<%= work.image_url %>" alt=""></a>
+      </figure>
+      <figcaption class="works-info">
+        <h5><%= work.title %></h5>
+        <h5><%= work.medium %></h5>
+        <h5><%= work.dimensions %></h5>
+        <p><%= work.notes %></p>
+      </figcaption>
+    </div>
 
     <div class="clearfix">
     </div>

@@ -8,16 +8,14 @@ body {
   margin-top: 2rem;
 }
 
-li {
-  padding: 0 2em;
-  text-align: center;
+nav {
+  position: relative;
 }
 
-a {
-  color: #939499;
-  letter-spacing: 0.1rem;
-  text-transform: lowercase;
-  text-decoration: none;
+main {
+  margin: 0 auto;
+  width: 80%;
+  /*border: 1px solid pink;*/
 }
 
 h1 {
@@ -40,6 +38,32 @@ h5 {
 
 }
 
+li {
+  padding: 0 2em;
+  text-align: center;
+}
+
+a {
+  color: #939499;
+  letter-spacing: 0.1rem;
+  text-transform: lowercase;
+  text-decoration: none;
+}
+
+img {
+  width: 25rem;
+}
+
+/* Add New / Edit Form */
+form label {
+ display: block;
+ margin: 1rem 0;
+}
+
+span {
+  color: #4c00ec;
+}
+
 /* Header */
 h1 a {
   color: #1a1a1a;
@@ -49,7 +73,7 @@ h1 a {
 
 .login {
   display: inline-block;
-  position: fixed;
+  position: absolute;
   top: 2rem;
   right: 1.5rem;
   text-align: right;
@@ -97,7 +121,46 @@ nav a {
   text-align: center;
 }
 
+/* Works */
+figure {
+  margin: 0;
+  float: left;
+  width: 40%;
+}
+
+figcaption {
+  float: left;
+  width: 60%;
+}
+
+h5:first-of-type {
+  margin-top: 0;
+}
+
+.works-individual {
+  width: 100%;
+  padding: 2rem 0;
+}
+
+.clearfix {
+  clear: both;
+}
+
+.delete-btn {
+  margin-top: 1.5rem;
+}
+
 /* Biography */
 .bio {
   width: 60%;
+}
+
+/* Contact */
+
+
+/* Footer */
+footer p {
+  color: #1a1a1a;
+  letter-spacing: 0.1rem;
+  text-align: center;
 }

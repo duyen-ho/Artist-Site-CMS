@@ -1,12 +1,19 @@
 <nav>
+
   <ul>
     <li class="menu-main"><a href="/works">Works</a></li>
     <li class="menu-main"><a href="/biography">Biography</a></li>
     <li class="menu-main"><a href="/contact">Contact</a></li>
   </ul>
+
   <ul class="menu-sub">
     <% @work_types.each do |category| %>
     <li><a href="/works?category=<%= category.name %>"><%= category.name %></a></li>
     <% end %>
   </ul>
+
 </nav>
+
+<div class="search-bar">
+  <%= erb(:_search) %>
+</div>

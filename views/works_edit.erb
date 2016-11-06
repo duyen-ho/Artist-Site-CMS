@@ -1,12 +1,11 @@
 <h3>Edit</h3>
 
-<img class="works-edit" src="<%= @work.image_url %>" alt="">
-
-<form class="form-edit" action="/admin/dashboard/works/<%= @work.id %>/edit" method="post">
-
-  <%= erb(:_form_contents) %>
-  <button>Update</button>
-
-</form>
+<div class="works-individual">
+  <img class="works-edit" src="<%= @work.image_url %>" alt="">
+  <form class="works-info" action="/admin/dashboard/works/<%= @work.id %>/edit" method="post">
+    <%= erb(:_form_contents) %>
+    <button class="add-edit-btn">Update</button>
+  </form>
+</div>
 
 <span><%= @status %></span>
