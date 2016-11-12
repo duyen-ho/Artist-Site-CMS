@@ -5,8 +5,8 @@ get '/login' do
   if User.find_by(id: session[:user_id])
     redirect to '/admin/dashboard'
   end
-
-  erb :login
+  # binding.pry
+  erb :login, :layout => :layout_login
 end
 
 post '/login' do
@@ -17,7 +17,7 @@ post '/login' do
   end
 
   @message = 'Please enter a valid username and password'
-  erb :login
+  erb :login, :layout => :layout_login
 end
 
 delete '/login' do

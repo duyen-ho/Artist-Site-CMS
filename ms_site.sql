@@ -8,7 +8,7 @@ CREATE TABLE works (
   dimensions VARCHAR(100),
   image_url TEXT,
   video_url TEXT,
-  display_homepage BOOLEAN,
+  display_homepage BOOLEAN DEFAULT 'false',
   notes TEXT
 );
 
@@ -19,21 +19,16 @@ CREATE TABLE work_types (
 
 CREATE TABLE users (
   id SERIAL4 PRIMARY KEY,
-  name VARCHAR(100)
+  name VARCHAR(100),
+  username VARCHAR(100),
   email VARCHAR(300),
   password_digest VARCHAR(400)
 );
 
 -- no associations
-CREATE TABLE biography (
-  intro TEXT,
-  education TEXT,
-  solo_exhibitions TEXT,
-  group_exhibitions TEXT,
-  performances TEXT,
-  awards TEXT,
-  publications TEXT,
-  interviews TEXT
+CREATE TABLE biographies (
+  id SERIAL4 PRIMARY KEY,
+  body TEXT
 );
 
 -- no associations
