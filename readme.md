@@ -1,12 +1,12 @@
 # Project 1: Content Management Site for Mia Salsjo - Artist.
 
-My artist friend Mia needs a new website.
+My artist friend Mia needs a new website.  
 This project is a CMS-in-the-making and was coded in Ruby using the Sinatra framework.
 
 
 ### Approach
 
-Project guidelines were followed and initial user stories and sketches were created. On line plans can be found here:
+Project guidelines were followed and initial user stories and sketches were created. Online plans can be found here:
 * [User Stories] (https://trello.com/b/3SZQlVrr/mia-salsjo-cms)
 * [Database Schema] (https://drive.google.com/file/d/0B5Q-oDSO4BJ0TFpfdjg4bzgyNDg/view)
 * [Wireframes] (https://app.mockflow.com/view/Db4e3fd168b8f0e368c1a5f375b436a8d#/page/2b0c3addf14a4cdfa1d6ff1f07897cfe)
@@ -14,7 +14,7 @@ Project guidelines were followed and initial user stories and sketches were crea
 
 ### The Learning Process
 
-Learning web development is an evolving process. In making my first full stack web application, I learned a lot about my own expectations and current limitations. I have confidence issues and have been reluctant to admit that I am struggling and to ask for real one-to-one help. This comes with confusion about my scholarship position and thinking I had to be more self-sufficent.
+Learning web development is a constantly evolving process. In making my first full stack web application, I learned a lot about my own expectations and current limitations. I have confidence issues and have been reluctant to admit that I am struggling and to ask for real one-to-one help.
 
 Although I had set very achievable goals, I had to present an incomplete work which I saw as a failure and was encouraged to see otherwise. I'm having difficulty in trusting myself. For me, it's a process of learning how to learn which is a wonderful thing and very humbling.
 
@@ -42,8 +42,8 @@ I'm not used to _not getting things_ right away and turning theory into practice
 
 ### Installation Instructions
 
-[Heroku Hosted Site](https://ms-testsite.herokuapp.com/)
+[Heroku Hosted Site](https://ms-testsite.herokuapp.com/)  
 For CMS viewing purposes:  
 u: MiaS  
 p: ms2016  
-Please be kind when viewing the site.  
+Please refrain from being destructive when viewing this test site :)
