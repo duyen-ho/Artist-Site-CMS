@@ -42,7 +42,7 @@ I'm not used to _not getting things_ right away and turning theory into practice
 
 ### Installation Instructions
 
-[Heroku Hosted Site](https://ms-testsite.herokuapp.com/)  
+[Heroku Hosted Site](https://ms-testsite.herokuapp.com/login)  
 For CMS viewing purposes:  
 u: MiaS  
 p: ms2016  
