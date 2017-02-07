@@ -1,6 +1,6 @@
-# Project 1: Content Management Site for Mia Salsjo - Artist.
+# Project 1: Content Management System for Mia Salsjo - Artist.
 
-My artist friend Mia needs a new website.  
+My friend Mia needs a new website.  
 This project is a CMS-in-the-making and was coded in Ruby using the Sinatra framework.
 
 
@@ -16,7 +16,7 @@ Project guidelines were followed and initial user stories and sketches were crea
 
 Learning web development is a constantly evolving process. In making my first full stack web application, I learned a lot about my own expectations and current limitations. I have confidence issues and have been reluctant to admit that I am struggling and to ask for real one-to-one help.
 
-Although I had set very achievable goals, I had to present an incomplete work which I saw as a failure and was encouraged to see otherwise. I'm having difficulty in trusting myself. For me, it's a process of learning how to learn which is a wonderful thing and very humbling.
+Although I had set very achievable goals, I had to present an incomplete work which I saw as a failure and was encouraged to see otherwise. For me, it's a process of learning how-to-learn which is wonderful and humbling.
 
 I was particularly overwhelmed by the size of the code in my `main.rb` file and investigated the process of refactoring Sinatra projects. I learned about separating route files - this [article](http://blog.carbonfive.com/2013/06/24/sinatra-best-practices-part-one/) was very helpful. I also applied [partials](https://www.learnhowtoprogram.com/ruby/team-week-181ef311-0c31-4c75-b4cc-7495c7a98063/partials-in-sinatra) in this project.
 
@@ -45,5 +45,4 @@ I'm not used to _not getting things_ right away and turning theory into practice
 [Heroku Hosted Site](https://ms-testsite.herokuapp.com/login)  
 For CMS viewing purposes:  
 u: MiaS  
-p: ms2016  
-Please refrain from being destructive when viewing this test site :)
+p: ms2016
